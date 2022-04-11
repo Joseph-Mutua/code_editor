@@ -1,3 +1,1 @@
-[submodule "local-client"]
-	path = local-client
-	url = ./packages/local-client
+
