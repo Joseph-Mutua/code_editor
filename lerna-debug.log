@@ -1,5 +1,5 @@
-32 error Error: Command failed: git add -- packages/browser-based-cli/package.json packages/browser-based-cli/package-lock.json packages/local-api/package.json packages/local-api/package-lock.json packages/cli/package.json packages/cli/package-lock.json lerna.json
-32 error fatal: Pathspec 'packages/browser-based-cli/package.json' is in submodule 'packages/browser-based-cli'
+32 error Error: Command failed: git add -- packages/local-client/package.json packages/local-client/package-lock.json packages/local-api/package.json packages/local-api/package-lock.json packages/cli/package.json packages/cli/package-lock.json lerna.json
+32 error fatal: Pathspec 'packages/local-client/package.json' is in submodule 'packages/local-client'
 32 error
 32 error     at makeError (/home/mutua/.nvm/versions/node/v16.14.2/lib/node_modules/lerna/node_modules/execa/index.js:174:9)
 32 error     at /home/mutua/.nvm/versions/node/v16.14.2/lib/node_modules/lerna/node_modules/execa/index.js:278:16

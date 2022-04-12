@@ -1,4 +1,0 @@
-
-[submodule "packages/browser-based-cli"]
-	path = packages/browser-based-cli
-	url = https://github.com/Joseph-Mutua/browser_based_cli
