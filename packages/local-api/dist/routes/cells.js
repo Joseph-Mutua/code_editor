@@ -29,6 +29,7 @@ const createCellsRouter = (filename, dir) => {
             res.send(JSON.parse(result));
         }
         catch (err) {
+            // @ts-ignore
             if (err.code === "ENOENT") {
                 // Add code to create file and add default cells
                 yield promises_1.default.writeFile(fullPath, "[]", "utf-8");
