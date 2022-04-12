@@ -15,8 +15,7 @@ This is a CLI built on a package-based architecture to launch an interactive dev
 4. Code will be bundled in the browser
 5. Code will then be executed in an iframe
 
-## App Structure 
-![App Structure](./public/images/AppStructure.png)
+
 
 ## Challenges
 1. Code will be provided to PreviewComponent as a String and needs to be executed safely
@@ -33,18 +32,6 @@ This is a CLI built on a package-based architecture to launch an interactive dev
 2. No need to maintain an API Server
 3. Less complexity - no moving code back and forth
 
-**Local Bundling Solution**
-
-Using ***ESBuild*** for both code transpiling and bundling and ***unpkg*** to access the NPM Registry.
-
-![Local Bundling Solution](./public/images/bundling.png)
-
-**Bundling Process**
-
-![Bundling Process](./public/images/bundling-process.png)
-
-## Implementing a Caching Layer
-![Implementing a Caching Layer](./public/images/caching.png)
 
 ## Considerations around Code Execution
 1. User-provided code might throw errors and cause the program to crash
@@ -58,25 +45,13 @@ Using ***ESBuild*** for both code transpiling and bundling and ***unpkg*** to ac
 
    All three considerations were solved by executing the user's code in an iframe with direct communication disabled
 
-## The Full Flow
 
-### Example of how the Full Flow is implemented on Codepen
 
-![The full Flow](./public/images/codepen.png)
-
-### Modifications
+### Modifications of the CodePen Implementation
 1. Eliminate the extra API server- hence whenever the user needs to execute some code, there is no need to make an extra request to obtain the HTML document(which is largely unmodified)
 2. Reload the iframe in a sandbox to eliminate connection between the parent and child
     - Users won't be able to use some in-browser features e.g cookies and localStorage in their code.
 
-![The modified full Flow](./public/images/fullflow.png)
-
-## Redux Store Design For the Cells
-This is a flow chart explaining the mechanism behind the operation of the `cells` reducer 
-![Redux Store Design](./public/images/redux.png)
-
-## Extracting State from Text Cell
-![Extracting State From Text Cell](./public/images/redux-state.png)
 
 ## Connecting Bundles in Redux
 ### Process
@@ -88,7 +63,3 @@ This is a flow chart explaining the mechanism behind the operation of the `cells
 6. Receive both actions in the bundles reducer and use that to update some piece of state and communicate that back to the **Code Cell** component. 
 7. The **Code Cell** component can then communicate the output of the bundle down to the `PreView` component.
 
-### Flow Chart
-![Connecting Bundles in Redux](./public/images/redux-bundles.png)
-
-## Local App Architecture

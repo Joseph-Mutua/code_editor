@@ -1,7 +1,7 @@
 # Browser Based Code Editor
 This is a CLI built on a package-based architecture to launch an interactive development environment for writing and documenting Code on the browser.
 
-This README will explain some of the technical challenges faced during the buiding process and their solutions along with the general architecture of the module.
+I will will take you throught the building process and explain some of the technical challenges faced and their solutions along with the general architecture of the module.
 
 To try out the module you can install it from this [link](https://www.npmjs.com/package/@mutua-cli/local-client)
 
