@@ -1,6 +1,6 @@
 {
   "name": "@mutua-cli/local-client",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "publisConfig": {
     "access": "public"
   },
