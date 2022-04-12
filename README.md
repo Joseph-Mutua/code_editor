@@ -1,6 +1,10 @@
-# Browser Based CLI
-This is a CLI built on a package-based architecture to launch an interactive development environment for writing and documenting Code
-This README explains some of the technical aspects of the module regarding how it was built.
+# Browser Based Code Editor
+This is a CLI built on a package-based architecture to launch an interactive development environment for writing and documenting Code on the browser.
+
+This README will explain some of the technical challenges faced during the buiding process and their solutions along with the general architecture of the module.
+
+To try out the module you can install it from this [link](https://www.npmjs.com/package/@mutua-cli/local-client)
+
 
 ## Features
 1. In-Browser code Transpiling and Processing
@@ -10,11 +14,14 @@ This README explains some of the technical aspects of the module regarding how i
 5. Leverages Web Assembly to run a code bundler directly in the Browser
 
 ## How it Works
-1. User runs the command `mutua-cli serve` on the command line
+1. User runs the command `cli serve` on the command line
 2. This starts up a server on `localhost:4005`
 3. User can now navigate onto that url and write code into an editor
 4. Code will be bundled in the browser
 5. Code will then be executed in an iframe
+
+## App Structure 
+![App Structure](./images/AppStructure.png)
 
 ## Challenges
 1. Code will be provided to PreviewComponent as a String and needs to be executed safely
@@ -35,6 +42,14 @@ This README explains some of the technical aspects of the module regarding how i
 
 Using ***ESBuild*** for both code transpiling and bundling and ***unpkg*** to access the NPM Registry.
 
+![Local Bundling Solution](./images/bundling.png)
+
+**Bundling Process**
+
+![Bundling Process](./images/bundling-process.png)
+
+## Implementing a Caching Layer
+![Implementing a Caching Layer](./images/caching.png)
 
 ## Considerations around Code Execution
 1. User-provided code might throw errors and cause the program to crash
@@ -48,14 +63,25 @@ Using ***ESBuild*** for both code transpiling and bundling and ***unpkg*** to ac
 
    All three considerations were solved by executing the user's code in an iframe with direct communication disabled
 
+## The Full Flow
 
+### Example of how the Full Flow is implemented on Codepen
 
-### Modifications on the Codepen Implementation
+![The full Flow](./images/codepen.png)
+
+### Modifications
 1. Eliminate the extra API server- hence whenever the user needs to execute some code, there is no need to make an extra request to obtain the HTML document(which is largely unmodified)
 2. Reload the iframe in a sandbox to eliminate connection between the parent and child
     - Users won't be able to use some in-browser features e.g cookies and localStorage in their code.
 
+![The modified full Flow](./images/fullflow.png)
 
+## Redux Store Design For the Cells
+This is a flow chart explaining the mechanism behind the operation of the `cells` reducer 
+![Redux Store Design](./images/redux.png)
+
+## Extracting State from Text Cell
+![Extracting State From Text Cell](./images/redux-state.png)
 
 ## Connecting Bundles in Redux
 ### Process
@@ -66,6 +92,9 @@ Using ***ESBuild*** for both code transpiling and bundling and ***unpkg*** to ac
 5. When the bundle is created by the bundle cell action creator, dispatch an action of type `BUNDLE COMPLETE` with the results of the bundle and an possible errors.
 6. Receive both actions in the bundles reducer and use that to update some piece of state and communicate that back to the **Code Cell** component. 
 7. The **Code Cell** component can then communicate the output of the bundle down to the `PreView` component.
+
+### Flow Chart
+![Connecting Bundles in Redux](./images/redux-bundles.png)
 
 ## Using Commander to build the CLI
 1. **serve.ts** Describes what to do when a user runs the `serve` command.
