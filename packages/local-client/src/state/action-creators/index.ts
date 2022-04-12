@@ -88,6 +88,7 @@ export const fetchCells = () => {
     } catch (err) {
       dispatch({
         type: ActionType.FETCH_CELLS_ERROR,
+        // @ts-ignore
         payload: err.message,
       });
     }
@@ -97,8 +98,10 @@ export const fetchCells = () => {
 export const saveCells = () => {
   return async (dispatch: Dispatch<Action>, getState: () => RootState) => {
     const {
+      // @ts-ignore
       cells: { data, order },
     } = getState();
+    // @ts-ignore
     const cells = order.map((id) => data[id]);
 
     try {
@@ -106,6 +109,7 @@ export const saveCells = () => {
     } catch (err) {
       dispatch({
         type: ActionType.SAVE_CELLS_ERROR,
+        // @ts-ignore
         payload: err.message,
       });
     }

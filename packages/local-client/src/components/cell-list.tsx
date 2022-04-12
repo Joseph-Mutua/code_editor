@@ -6,7 +6,9 @@ import AddCell from "./add-cell";
 import { useActions } from "../hooks/use-actions";
 
 const CellList: React.FC = () => {
+  // @ts-ignore
   const cells = useTypedSelector(({ cells: { order, data } }) =>
+    // @ts-ignore
     order.map((id) => data[id])
   );
 
@@ -16,8 +18,7 @@ const CellList: React.FC = () => {
     fetchCells();
   }, []);
 
-
-
+  // @ts-ignore
   const renderedCells = cells.map((cell) => (
     <Fragment key={cell.id}>
       <CellListItem cell={cell} />
