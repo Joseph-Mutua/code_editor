@@ -1,6 +1,6 @@
 {
   "name": "mutua-cli",
-  "version": "6.0.0",
+  "version": "7.0.0",
   "description": "",
   "publisConfig": {
     "access": "public"
@@ -17,10 +17,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@mutua-cli/local-client": "^6.0.0"
+    "@mutua-cli/local-client": "^7.0.0"
   },
   "devDependencies": {
-    "@mutua-cli/local-api": "^6.0.0",
+    "@mutua-cli/local-api": "^7.0.0",
     "@types/node": "^17.0.23",
     "commander": "^9.1.0",
     "esbuild": "0.8.26",
