@@ -10,6 +10,7 @@ const path_1 = __importDefault(require("path"));
 const cells_1 = require("./routes/cells");
 const serve = (port, filename, dir, useProxy) => {
     const app = (0, express_1.default)();
+    app.use((0, cells_1.createCellsRouter)(filename, dir));
     if (useProxy) {
         app.use((0, http_proxy_middleware_1.createProxyMiddleware)({
             target: "http://localhost:3000",
@@ -18,10 +19,9 @@ const serve = (port, filename, dir, useProxy) => {
         }));
     }
     else {
-        const packagePath = require.resolve("local-client/build/index.html");
+        const packagePath = require.resolve("@mutua-cli/local-client/build/index.html");
         app.use(express_1.default.static(path_1.default.dirname(packagePath)));
     }
-    app.use((0, cells_1.createCellsRouter)(filename, dir));
     return new Promise((resolve, reject) => {
         app.listen(port, resolve).on("reject", reject);
     });

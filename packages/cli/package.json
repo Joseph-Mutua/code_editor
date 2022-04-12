@@ -1,7 +1,13 @@
 {
-  "name": "cli",
+  "name": "mutua-cli",
   "version": "1.0.0",
   "description": "",
+  "publisConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "tsc --watch --preserveWatchOutput"
   },
@@ -10,7 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "commander": "^9.1.0",
-    "local-api": "^1.0.0"
+    "@mutua-cli/local-api": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.23",
