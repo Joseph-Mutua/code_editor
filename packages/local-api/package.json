@@ -11,7 +11,7 @@
     "start": "tsc --watch --preserveWatchOutput",
     "prepublishOnly": "tsc"
   },
-  "publisConfig": {
+  "publishConfig": {
     "access": "public"
   },
   "keywords": [],
@@ -28,5 +28,5 @@
     "express": "^4.17.3",
     "http-proxy-middleware": "^2.0.4"
   },
-  "gitHead": "7d6f124acb05cc229170f02197e463f4c3547c38"
+  "gitHead": "76cf6307073688fe034548bd40557080886bacf3"
 }

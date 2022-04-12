@@ -1,7 +1,7 @@
 {
   "name": "@mutua-cli/local-client",
   "version": "8.0.1",
-  "publisConfig": {
+  "publishConfig": {
     "access": "public"
   },
   "files": [
@@ -64,5 +64,5 @@
       "last 1 safari version"
     ]
   },
-  "gitHead": "7d6f124acb05cc229170f02197e463f4c3547c38"
+  "gitHead": "76cf6307073688fe034548bd40557080886bacf3"
 }
