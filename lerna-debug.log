@@ -1,12 +1,6 @@
-0 silly argv {
-0 silly argv   _: [ 'add' ],
-0 silly argv   scope: 'local-api',
-0 silly argv   globs: [],
-0 silly argv   lernaVersion: '3.22.1',
-0 silly argv   '$0': 'lerna',
-0 silly argv   pkg: 'hht-proxy-middleware'
-0 silly argv }
-1 notice cli v3.22.1
-2 verbose rootPath /home/mutua/Desktop/TS/CLI/jbook
-3 error Error: 404 Not Found - GET https://registry.npmjs.org/hht-proxy-middleware - Not found
-3 error     at /home/mutua/.nvm/versions/node/v16.14.2/lib/node_modules/lerna/node_modules/@evocateur/npm-registry-fetch/check-response.js:104:15
+32 error Error: Command failed: git add -- packages/browser-based-cli/package.json packages/browser-based-cli/package-lock.json packages/local-api/package.json packages/local-api/package-lock.json packages/cli/package.json packages/cli/package-lock.json lerna.json
+32 error fatal: Pathspec 'packages/browser-based-cli/package.json' is in submodule 'packages/browser-based-cli'
+32 error
+32 error     at makeError (/home/mutua/.nvm/versions/node/v16.14.2/lib/node_modules/lerna/node_modules/execa/index.js:174:9)
+32 error     at /home/mutua/.nvm/versions/node/v16.14.2/lib/node_modules/lerna/node_modules/execa/index.js:278:16
+32 error     at processTicksAndRejections (node:internal/process/task_queues:96:5)
